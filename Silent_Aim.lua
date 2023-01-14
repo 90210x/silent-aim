@@ -1,5 +1,4 @@
--- Remember To Like And Subscribe For More :) -Dev Z Scripts
--- Aimbot 
+
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local mouse = LocalPlayer:GetMouse()
@@ -10,9 +9,6 @@ local target = false
 local RunService = game:GetService("RunService")
 
 
-local SAim = {
-    saimOn = true
-}
 
 
 getfenv().lock = "Head" -- Head or Hitbox or Random
@@ -98,7 +94,7 @@ meta.__namecall = newcclosure(function(...)
 	return oldNamecall(unpack(args))
 end)
 
-if SAim.saimOn == true then
+
     warn("Script loaded!\nTime taken: "..math.abs(tonumber(tick())-st))
     RunService:BindToRenderStep("SilentAim",1,function()
         if UserInputService:IsMouseButtonPressed(0) and Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("Humanoid") and Players.LocalPlayer.Character.Humanoid.Health > 0 then
@@ -132,4 +128,3 @@ if SAim.saimOn == true then
             end
         end
     end)
-end
